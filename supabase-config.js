@@ -7,7 +7,7 @@
    ============================================================ */
 
 window.SUPABASE_CONFIG = {
-  url: "sb_publishable_spaQDdOCNwvwcyXgLLlvvQ_dsKI_DZj",
+  url: "https://gdwuiyhgkwnofhncgafi.supabase.co",
   anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkd3VpeWhna3dub2ZobmNnYWZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUzOTE5MDMsImV4cCI6MjExMDk2NzkwM30.J_URcFsEslmMVBGp-uB6Afo_xh1eLbgWQyS1DoD622U"
 };
 
