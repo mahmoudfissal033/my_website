@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmoud Faisal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ===== SCROLL PROGRESS INDICATOR ===== -->
+  <div class="scroll-indicator" id="scrollIndicator">
+    <svg width="50" height="50" viewBox="0 0 50 50">
+      <defs>
+        <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#6c5ce7" />
+          <stop offset="100%" stop-color="#00cec9" />
+        </linearGradient>
+      </defs>
+      <circle cx="25" cy="25" r="20" class="scroll-bg" />
+      <circle cx="25" cy="25" r="20" class="scroll-progress" id="scrollProgress" />
+    </svg>
+    <span class="scroll-percent" id="scrollPercent">0%</span>
+  </div>
+
+  <!-- ===== THEME TOGGLE ===== -->
+  <div class="theme-toggle" id="themeToggle" title="الوضع النهاري">
+    <i class="fas fa-sun"></i>
+  </div>
+
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="logo-icon">MF</div>
+      <span>Mahmoud Fissal</span>
+    </div>
+
+    <div class="quick-sidebar" id="quickSidebar">
+      <div class="quick-sidebar-header">
+        <span class="quick-sidebar-logo">MF</span>
+        <span>الوصول السريع</span>
+        <button class="quick-sidebar-close" id="quickSidebarClose">&times;</button>
+      </div>
+      <nav class="quick-sidebar-links">
+        <a href="#hero"><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="#about"><i class="fas fa-user"></i> من أنا</a>
+        <a href="#services"><i class="fas fa-cogs"></i> خدماتي</a>
+        <a href="#portfolio"><i class="fas fa-briefcase"></i> معرض أعمالي</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> تواصل معي</a>
+      </nav>
+    </div>
+    <div class="quick-sidebar-overlay" id="quickSidebarOverlay"></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><button class="hamburger" id="hamburger" aria-label="القائمة">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button></li>
+      <li><a href="#hero" class="active">الرئيسية</a></li>
+      <li><a href="#about">من أنا</a></li>
+      <li><a href="#services">خدماتي</a></li>
+      <li><a href="#portfolio">معرض أعمالي</a></li>
+      <li><a href="#contact">تواصل معي</a></li>
+    </ul>
+  </nav>
+
+    <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-geo-container" id="heroGeoContainer"></div>
+
+    <div class="hero-content">
+      <div class="hero-text reveal">
+        <h1 class="hero-main-title"><span class="title-accent">مصمم جرافيك</span> ومحتوى تعليمي تفاعلي</h1>
+
+        <p class="hero-desc">أحول الأفكار والتصاميم إلى <span class="text-orange">تجربة بصرية</span> وتعليمية احترافية تجمع بين <span class="text-orange">الإبداع</span> والبساطة.</p>
+
+        <h2 class="hero-sub-title">معكم <span class="hero-name-highlight">محمود فيصل</span></h2>
+
+        <p class="hero-intro">خريج قسم تكنولوجيا التعليم والمعلومات - كلية التربية النوعية - جامعة قنا</p>
+
+        <p class="hero-spec">متخصص في تصميم السوشيال ميديا، الموشن جرافيك، تصميم البرمجيات التعليمية، المونتاج وصناعة المحتوى، واستخدام الذكاء الاصطناعي في التصميم.</p>
+
+        <div class="hero-boxes">
+          <span class="spec-box box-blue">تصميم السوشيال ميديا</span>
+          <span class="spec-box box-yellow">الموشن جرافيك</span>
+          <span class="spec-box box-teal">تصميم الوسائط التعليمية</span>
+          <span class="spec-box box-orange">المونتاج وصناعة المحتوى</span>
+          <span class="spec-box box-white">الذكاء الاصطناعي في التصميم</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-black"><i class="fas fa-paper-plane"></i> تواصل معي</a>
+          <a href="#about" class="btn btn-red"><i class="fas fa-info-circle"></i> اعرف أكثر</a>
+        </div>
+      </div>
+
+      <div class="hero-image reveal reveal-delay-1">
+        <div class="image-wrapper">
+          <div class="img-accent"></div>
+          <img src="MAHMOUD.jpg" alt="Mahmoud Faisal">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="about-image reveal reveal-delay-1">
+        <div class="about-img-wrapper">
+          <div class="img-accent"></div>
+          <img src="2525.jpeg" alt="Mahmoud Faisal">
+          <div class="experience-badge">
+            <span class="num">+4</span>
+            <span class="label">سنوات خبرة</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-2">
+        <div class="section-header">
+          <h2>من <span>أنا</span></h2>
+          <div class="section-divider"></div>
+          <p>نبذة عن <span class="ah-t">مسيرتي</span> و<span class="ah-g">خبراتي</span></p>
+        </div>
+        <h3 class="hero-title" style="font-size:2rem;">مصمم جرافيك <span class="accent-text">محترف</span></h3>
+        <p class="hero-sub" style="white-space:normal;max-width:100%;">
+          مصمم جرافيك متخصص في ابتكار وتصميم <span class="ah-t">الهوية البصرية</span>، <span class="ah-g">الإعلانات</span>، والمواد الدعائية باستخدام أحدث <span class="ah-p">الأدوات</span>. أركز على تقديم <span class="ah-g">تصاميم إبداعية</span> تجمع بين <span class="ah-t">الجاذبية البصرية</span> والرسالة الواضحة.
+        </p>
+        <p class="hero-sub" style="white-space:normal;max-width:100%;font-size:0.95rem;">
+          أعمل على تحويل الأفكار إلى <span class="ah-g">أعمال فنية مؤثرة</span>، مع الاهتمام بأدق التفاصيل لضمان أفضل <span class="ah-t">تجربة بصرية</span>، ولدي <span class="ah-p">شغف دائم</span> بتعلم كل جديد في عالم التصميم.
+        </p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">سنوات خبرة</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">150+</div>
+            <div class="stat-label">عميل راضي</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">148+</div>
+            <div class="stat-label">مشروع مكتمل</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="section-header reveal">
+      <h2><span>خدماتي</span></h2>
+      <div class="section-divider"></div>
+      <p>ماذا أقدم لك من خدمات احترافية</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+        <h3>تصميم برمجيات تعليمية</h3>
+        <p>تصميم برمجيات تعليمية عالية الجودة بتجربة مستخدم تفاعلية تناسب جميع الفئات.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="icon-box"><i class="fas fa-id-card"></i></div>
+        <h3>تصميم كروت شخصية</h3>
+        <p>تصميم كروت شخصية احترافية تعبر عن هويتك بأسلوب أنيق وعصري.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="icon-box"><i class="fas fa-award"></i></div>
+        <h3>تصميم شهادات تقدير</h3>
+        <p>تصميم شهادات تقدير وشكر بلمسات إبداعية تناسب مختلف المناسبات.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-4">
+        <div class="icon-box"><i class="fas fa-utensils"></i></div>
+        <h3>تصميم منيو مطاعم</h3>
+        <p>تصميم مينوهات مطاعم وكافيهات جذابة تعكس هوية المكان وتشجع على الطلب.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-5">
+        <div class="icon-box"><i class="fas fa-book"></i></div>
+        <h3>تصميم أغلفة كتب</h3>
+        <p>تصميم أغلفة كتب احترافية تجذب القراء وتعبر عن محتوى الكتاب.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-5">
+        <div class="icon-box"><i class="fas fa-chart-pie"></i></div>
+        <h3>تصميم إنفوجرافيك</h3>
+        <p>تصميم إنفوجرافيك تعليمي وتوضيحي يحول المعلومات المعقدة إلى رسوم بسيطة.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="icon-box"><i class="fas fa-file-alt"></i></div>
+        <h3>تصميم CV احترافي</h3>
+        <p>تصميم سيرة ذاتية احترافية تبرز مهاراتك وخبراتك بأفضل صورة.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="icon-box"><i class="fas fa-prescription"></i></div>
+        <h3>تصميم روشتات طبية</h3>
+        <p>تصميم روشتات طبية منظمة وواضحة تناسب العيادات والمراكز الطبية.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="icon-box"><i class="fas fa-ring"></i></div>
+        <h3>تصميم دعوات زفاف</h3>
+        <p>تصميم دعوات زفاف ومناسبات أنيقة بتصاميم فريدة تناسب ذوقك.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-4">
+        <div class="icon-box"><i class="fas fa-slideshare"></i></div>
+        <h3>تصميم عروض تقديمية</h3>
+        <p>تصميم عروض تقديمية احترافية تجعل أفكارك أكثر وضوحاً وتأثيراً.</p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-5">
+        <div class="icon-box"><i class="fas fa-book-open"></i></div>
+        <h3>تصميم كتب احترافية</h3>
+        <p>تصميم وتنسيق كتب احترافية مع الاهتمام بالتخطيط والإخراج الفني الكامل.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-header reveal">
+      <h2>معرض <span>أعمالي</span></h2>
+      <div class="section-divider"></div>
+      <p>نماذج من المشاريع التي قمت بتنفيذها</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-1">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>برمجيات تعليمية</h4>
+          <p>تصميم برمجيات تعليمية عالية الجودة بتجربة مستخدم تفاعلية</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-2">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>كروت شخصية</h4>
+          <p>تصميم كروت شخصية احترافية تعبر عن هويتك</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-3">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>شهادات تقدير</h4>
+          <p>تصميم شهادات تقدير وشكر بلمسات إبداعية</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-4">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>مينوهات مطاعم</h4>
+          <p>تصميم مينوهات مطاعم وكافيهات جذابة</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-5">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>أغلفة كتب</h4>
+          <p>تصميم أغلفة كتب احترافية تجذب القراء</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-5">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>إنفوجرافيك تعليمي</h4>
+          <p>تصميم إنفوجرافيك تعليمي وتوضيحي احترافي</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-1">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>سيرة ذاتية</h4>
+          <p>تصميم سيرة ذاتية احترافية تبرز مهاراتك</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-2">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>روشتات طبية</h4>
+          <p>تصميم روشتات طبية منظمة للعيادات والمراكز</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-3">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>دعوات زفاف</h4>
+          <p>تصميم دعوات زفاف ومناسبات أنيقة وفريدة</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-4">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>عروض تقديمية</h4>
+          <p>تصميم عروض تقديمية احترافية مؤثرة</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal reveal-delay-5">
+        <div class="portfolio-thumb"></div>
+        <div class="portfolio-overlay">
+          <h4>كتب احترافية</h4>
+          <p>تصميم وتنسيق كتب مع الإخراج الفني الكامل</p>
+          <span class="portfolio-btn"><i class="fas fa-eye"></i> انقر هنا لمشاهدة المزيد</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="section-header reveal">
+      <h2><span>تواصل</span> معي</h2>
+      <div class="section-divider"></div>
+      <p>يسعدني سماع رأيك أو فكرة مشروعك القادم</p>
+      <p>لا تتردد في التواصل معي لأي استفسار أو فكرة مشروع. أنا هنا لمساعدتك في تحويل أفكارك إلى واقع.</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info reveal reveal-delay-1">
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-detail">
+            <h4>البريد الإلكتروني</h4>
+            <p>mahmoudfissal033@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="contact-detail">
+            <h4>رقم الهاتف</h4>
+            <p>01008860716</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-detail">
+            <h4>LinkedIn</h4>
+            <p><a href="https://www.linkedin.com/in/mahmoud-faissl-9bbb2a295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:none;">mahmoud-faissl</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+          <div class="contact-detail">
+            <h4>Facebook</h4>
+            <p><a href="https://www.facebook.com/share/17kSdzEbu6/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:none;">Mahmoud Faisal</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <div class="contact-detail">
+            <h4>Instagram</h4>
+            <p><a href="https://www.instagram.com/mahmoud_fissal_mohamed?igsh=MTRkZGphd3U5NDc4Nw==" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:none;">mahmoud_fissal_mohamed</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-detail">
+            <h4>WhatsApp & Telegram</h4>
+            <p><a href="https://wa.me/201008860716" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:none;">01008860716</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <form class="contact-form reveal reveal-delay-2" id="contactForm" action="https://formsubmit.co/mahmoudfissal033@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="">
+        <div class="form-group">
+          <label for="name">الاسم</label>
+          <input type="text" id="name" placeholder="أدخل اسمك الكريم" required>
+        </div>
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" id="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">الموضوع</label>
+          <input type="text" id="subject" placeholder="موضوع الرسالة">
+        </div>
+        <div class="form-group">
+          <label for="message">الرسالة</label>
+          <textarea id="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i>
+          إرسال الرسالة
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/17kSdzEbu6/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/mahmoud_fissal_mohamed?igsh=MTRkZGphd3U5NDc4Nw==" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/mahmoud-faissl-9bbb2a295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/201008860716" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>جميع الحقوق محفوظة &copy; 2026 <span class="footer-name">محمود فيصل</span></p>
+  </footer>
+
+  <script>
+    // ===== NAVBAR SCROLL EFFECT =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ===== QUICK SIDEBAR =====
+    const quickSidebar = document.getElementById('quickSidebar');
+    const quickOverlay = document.getElementById('quickSidebarOverlay');
+    const quickClose = document.getElementById('quickSidebarClose');
+    const hamburger = document.getElementById('hamburger');
+    function openSidebar() {
+      quickSidebar.classList.add('open');
+      quickOverlay.classList.add('open');
+      hamburger.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+      quickSidebar.classList.remove('open');
+      quickOverlay.classList.remove('open');
+      hamburger.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburger && quickSidebar) {
+      hamburger.addEventListener('click', () => {
+        if (quickSidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      quickOverlay.addEventListener('click', closeSidebar);
+      quickClose.addEventListener('click', closeSidebar);
+
+      quickSidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeSidebar);
+      });
+    }
+
+    // ===== ACTIVE NAV LINK =====
+    const sections = document.querySelectorAll('section');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navAnchors.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // ===== SCROLL REVEAL =====
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ===== CONTACT FORM =====
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+      btn.disabled = true;
+
+      const formData = new FormData(this);
+
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(() => {
+        btn.innerHTML = '<i class="fas fa-check-circle"></i> تم الإرسال بنجاح!';
+        btn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+          this.reset();
+        }, 3000);
+      })
+      .catch(() => {
+        btn.innerHTML = '<i class="fas fa-times-circle"></i> فشل الإرسال!';
+        btn.style.background = 'linear-gradient(135deg, #d63031, #e17055)';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      });
+    });
+
+    // ===== SERVICE CARD → PORTFOLIO NAVIGATION =====
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    document.querySelectorAll('.service-card').forEach((card, i) => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        const target = portfolioItems[i];
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.style.outline = '3px solid var(--primary)';
+          target.style.outlineOffset = '4px';
+          setTimeout(() => {
+            target.style.outline = 'none';
+          }, 2000);
+        }
+      });
+    });
+
+    // ===== PARALLAX PARTICLES =====
+    document.addEventListener('mousemove', (e) => {
+      const particles = document.querySelectorAll('.particle');
+      particles.forEach((p, i) => {
+        const speed = 0.02 + (i * 0.01);
+        const x = (window.innerWidth / 2 - e.clientX) * speed;
+        const y = (window.innerHeight / 2 - e.clientY) * speed;
+        p.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+
+    // ===== SCROLL PROGRESS INDICATOR =====
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollPercent = document.getElementById('scrollPercent');
+    const circumference = 2 * Math.PI * 20;
+
+    scrollProgress.style.strokeDasharray = circumference;
+
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      const offset = circumference - progress * circumference;
+      scrollProgress.style.strokeDashoffset = offset;
+      scrollPercent.textContent = Math.round(progress * 100) + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+    window.addEventListener('resize', updateScrollProgress);
+    updateScrollProgress();
+
+    // ===== HERO GEOMETRIC SHAPES =====
+    (function generateGeoShapes() {
+      const container = document.getElementById('heroGeoContainer');
+      if (!container) return;
+      const colors = ['rgba(108,92,231,', 'rgba(0,206,201,', 'rgba(253,203,110,', 'rgba(253,121,168,', 'rgba(9,132,227,', 'rgba(0,184,148,'];
+      for (let i = 0; i < 30; i++) {
+        const el = document.createElement('div');
+        el.className = 'hero-geo';
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        const size = 6 + Math.random() * 30;
+        const isCircle = Math.random() > 0.5;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const alpha = 0.08 + Math.random() * 0.12;
+        const dur = 3 + Math.random() * 7;
+        const delay = Math.random() * 5;
+        const r = Math.random() * 360;
+        const r2 = r + 10 + Math.random() * 20;
+        Object.assign(el.style, {
+          top: top + '%',
+          left: left + '%',
+          width: size + 'px',
+          height: size + 'px',
+          borderRadius: isCircle ? '50%' : (2 + Math.random() * 12) + 'px',
+          backgroundColor: isCircle ? color + alpha + ')' : 'transparent',
+          border: isCircle ? 'none' : '1.5px solid ' + color + '0.18)',
+          animation: `geo-float ${dur}s ease-in-out ${delay}s infinite`,
+          '--r': r + 'deg',
+          '--r2': r2 + 'deg',
+        });
+        container.appendChild(el);
+      }
+    })();
+
+    // ===== THEME TOGGLE (DARK/LIGHT) =====
+    const themeToggle = document.getElementById('themeToggle');
+    let isLight = false;
+    themeToggle.addEventListener('click', () => {
+      isLight = !isLight;
+      document.documentElement.setAttribute('data-theme', isLight ? 'light' : '');
+      themeToggle.innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      themeToggle.title = isLight ? 'الوضع الليلي' : 'الوضع النهاري';
+    });
+  </script>
+
+  <!-- ===== بيانات الموقع (قراءة فقط في صفحة الزائر من Supabase) ===== -->
+  <script src="site-data.js"></script>
+  <script src="supabase-config.js"></script>
+  <script type="module" src="visitor.js"></script>
+</body>
+</html>

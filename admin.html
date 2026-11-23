@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة المدير | Mahmoud Faisal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ===== الشريط العلوي ===== -->
+  <header class="admin-header">
+    <div class="nav-brand">
+      <div class="logo-icon">MF</div>
+      <span data-admin-text="headerBrand">لوحة تحكم محمود فيصل</span>
+    </div>
+    <div class="admin-actions">
+      <span class="admin-status" id="adminStatus">جاهز</span>
+      <a href="index.html" target="_blank" rel="noopener noreferrer" class="admin-btn ghost"><i class="fas fa-eye"></i> <span data-admin-text="previewButton">معاينة صفحة الزائر</span></a>
+      <button type="button" class="admin-btn primary" id="saveNow"><i class="fas fa-save"></i> <span data-admin-text="saveButton">حفظ الآن</span></button>
+      <button type="button" class="admin-btn danger is-hidden" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> خروج</button>
+    </div>
+  </header>
+
+  <div class="admin-banner is-hidden" id="setupBanner"></div>
+
+  <!-- ===== شاشة الدخول ===== -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <div class="logo-icon">MF</div>
+      <h2 data-admin-text="loginTitle">لوحة المدير</h2>
+      <p data-admin-text="loginDesc" data-admin-multiline>هذه الصفحة مخصصة لك وحدك.
+الزوار يرون صفحة العرض فقط ولا يمكنهم التعديل.</p>
+      <form id="loginForm">
+        <div class="admin-field">
+          <label class="admin-label" for="adminEmail" data-admin-text="loginEmailLabel">البريد الإلكتروني</label>
+          <input class="admin-input" id="adminEmail" type="email" dir="ltr" autocomplete="username" required placeholder="admin@example.com">
+        </div>
+        <div class="admin-field">
+          <label class="admin-label" for="adminPassword" data-admin-text="loginPasswordLabel">كلمة المرور</label>
+          <input class="admin-input" id="adminPassword" type="password" autocomplete="current-password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="admin-btn primary"><i class="fas fa-sign-in-alt"></i> <span data-admin-text="loginButton">دخول المدير</span></button>
+      </form>
+      <div class="login-error" id="loginError"></div>
+    </div>
+  </div>
+
+  <!-- ===== لوحة التحرير ===== -->
+  <div class="admin-layout is-hidden" id="adminApp">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div id="adminTabs"></div>
+
+      <button type="button" class="admin-tab" id="backupToggle">
+        <i class="fas fa-database"></i>
+        <span data-admin-text="backupTitle">النسخة الاحتياطية</span>
+        <i class="fas fa-chevron-down" id="backupChevron"></i>
+      </button>
+
+      <div class="admin-backup-panel is-hidden" id="backupPanel">
+        <button type="button" class="admin-btn ghost" id="exportBtn"><i class="fas fa-download"></i> <span data-admin-text="exportButton">تنزيل نسخة احتياطية</span></button>
+        <button type="button" class="admin-btn ghost" id="importBtn"><i class="fas fa-file-import"></i> <span data-admin-text="importButton">استيراد نسخة</span></button>
+        <button type="button" class="admin-btn danger" id="resetBtn"><i class="fas fa-undo"></i> <span data-admin-text="resetButton">استعادة الافتراضي</span></button>
+        <input type="file" id="importFile" accept="application/json,.json" class="is-hidden">
+        <p class="admin-hint" data-admin-text="backupHint">نزّل نسخة قبل أي تعديل كبير، واستخدم الاستيراد للرجوع لها وقت ما تحب.</p>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-panel-head">
+        <h2 id="adminGroupTitle"></h2>
+        <span data-admin-text="panelNote">كل تعديل تحفظه يظهر فورًا في صفحة الزائر</span>
+      </div>
+      <div id="adminFields"></div>
+    </main>
+  </div>
+
+  <p class="admin-footer-note" data-admin-text="footerNote" data-admin-rich>لون الكلمات داخل النصوص يُكتب هكذا: [[orange:كلمة ملونة]] — وتبدأ الصفحة بالشكل الافتراضي قبل أول تعديل.</p>
+
+  <script src="site-data.js"></script>
+  <script src="supabase-config.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

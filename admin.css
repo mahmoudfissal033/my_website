@@ -1,0 +1,505 @@
+/* ============================================================
+   admin.css - لوحة المدير (نفس ألوان ونمط صفحة الزائر)
+   ============================================================ */
+
+body.admin-body {
+  background: var(--bg-dark);
+  min-height: 100vh;
+  color: var(--text-light);
+  padding-top: 76px;
+}
+
+.is-hidden { display: none !important; }
+
+/* ===== الشريط العلوي ===== */
+.admin-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: 76px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(0, 29, 61, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(108, 92, 231, 0.18);
+}
+
+.admin-header .nav-brand { direction: ltr; }
+
+.admin-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+/* زرار النسخة الاحتياطية داخل القائمة الجانبية */
+#backupToggle {
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(108, 92, 231, 0.12);
+}
+#backupChevron { width: auto !important; color: var(--text-muted) !important; }
+.admin-backup-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 8px 12px;
+  border-bottom: 1px solid rgba(108, 92, 231, 0.12);
+}
+.admin-backup-panel .admin-btn { width: 100%; justify-content: flex-start; }
+.admin-backup-panel .admin-hint { margin-top: 2px; }
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(108, 92, 231, 0.35);
+  background: rgba(108, 92, 231, 0.14);
+  color: var(--text-light);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.admin-btn:hover { background: rgba(108, 92, 231, 0.3); transform: translateY(-2px); }
+.admin-btn.primary { background: var(--gradient-1); border-color: transparent; color: #fff; }
+.admin-btn.ghost { background: transparent; }
+.admin-btn.danger { border-color: rgba(214, 48, 49, 0.4); background: rgba(214, 48, 49, 0.12); }
+.admin-btn.danger:hover { background: rgba(214, 48, 49, 0.28); }
+.admin-btn.small { padding: 5px 10px; font-size: 0.75rem; border-radius: 8px; }
+.admin-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.admin-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 50px;
+  background: rgba(160, 160, 184, 0.1);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.admin-status.saving { background: rgba(253, 203, 110, 0.12); color: #fdcb6e; }
+.admin-status.saved { background: rgba(0, 184, 148, 0.14); color: #00cec9; }
+.admin-status.error { background: rgba(214, 48, 49, 0.14); color: #ff7675; }
+
+.admin-banner {
+  margin: 16px 30px 0;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(253, 203, 110, 0.1);
+  border: 1px solid rgba(253, 203, 110, 0.3);
+  color: #fdcb6e;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ===== التخطيط ===== */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 30px 60px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.admin-layout > * { min-width: 0; }
+
+.admin-sidebar {
+  background: var(--bg-card);
+  border: 1px solid rgba(108, 92, 231, 0.14);
+  border-radius: 18px;
+  padding: 14px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.admin-tab {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  margin-bottom: 6px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: right;
+  transition: all 0.25s ease;
+}
+.admin-tab:last-child { margin-bottom: 0; }
+.admin-tab i { width: 20px; text-align: center; color: var(--primary); }
+.admin-tab:hover { background: rgba(108, 92, 231, 0.1); color: var(--text-light); }
+.admin-tab.active { background: var(--gradient-1); color: #fff; box-shadow: 0 6px 20px rgba(108, 92, 231, 0.25); }
+.admin-tab.active i { color: #fff; }
+
+.admin-main {
+  background: var(--bg-card);
+  border: 1px solid rgba(108, 92, 231, 0.14);
+  border-radius: 18px;
+  padding: 26px;
+  min-height: 400px;
+}
+
+.admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(108, 92, 231, 0.12);
+}
+.admin-panel-head h2 { font-size: 1.4rem; font-weight: 800; }
+.admin-panel-head span { font-size: 0.8rem; color: var(--text-muted); }
+
+/* ===== الحقول ===== */
+.admin-field { margin-bottom: 22px; }
+.admin-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #a29bfe;
+}
+.admin-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 6px 0 0;
+}
+.admin-input {
+  width: 100%;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(108, 92, 231, 0.22);
+  border-radius: 10px;
+  color: var(--text-light);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.25s ease;
+  direction: rtl;
+}
+textarea.admin-input { min-height: 90px; resize: vertical; line-height: 1.8; }
+input.admin-input[dir="ltr"], input.admin-input[type="url"] { direction: ltr; text-align: left; }
+.admin-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.12); }
+
+/* ===== حقل الصورة ===== */
+.admin-image {
+  border: 1px solid rgba(108, 92, 231, 0.16);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(108, 92, 231, 0.04);
+}
+.admin-image-preview {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(108, 92, 231, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.admin-image-preview i { font-size: 1.6rem; opacity: 0.6; }
+.admin-image-controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.admin-image-controls .admin-input { flex: 1 1 240px; }
+.admin-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: rgba(0, 206, 201, 0.12);
+  border: 1px solid rgba(0, 206, 201, 0.3);
+  color: #81ecec;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.admin-file-label input { display: none; }
+
+/* ===== القوائم البسيطة ===== */
+.admin-list-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.admin-add {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed rgba(0, 206, 201, 0.4);
+  border-radius: 10px;
+  background: rgba(0, 206, 201, 0.06);
+  color: #81ecec;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+.admin-add:hover { background: rgba(0, 206, 201, 0.14); }
+
+/* ===== بطاقات القوائم (خدمات / إحصائيات / تواصل / معرض) ===== */
+.admin-item-card {
+  border: 1px solid rgba(108, 92, 231, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.admin-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+}
+.admin-item-head strong { font-size: 0.95rem; color: #a29bfe; }
+.admin-item-actions { display: flex; gap: 6px; }
+.admin-item-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.admin-item-body .admin-field { margin-bottom: 0; }
+.admin-item-body .admin-field.wide { grid-column: 1 / -1; }
+
+/* معاينة بطاقة المعرض */
+.admin-mini {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+  align-items: center;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-dark);
+  border: 1px solid rgba(108, 92, 231, 0.2);
+}
+.admin-mini-thumb {
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(108, 92, 231, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+.admin-mini-body { padding: 10px 14px 10px 0; }
+.admin-mini-body b { display: block; font-size: 0.95rem; margin-bottom: 6px; }
+.admin-mini-body small { color: var(--text-muted); font-size: 0.75rem; line-height: 1.6; display: block; }
+.admin-mini-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #81ecec;
+  text-decoration: none;
+  background: rgba(0, 206, 201, 0.1);
+  border: 1px solid rgba(0, 206, 201, 0.25);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+.admin-mini-link.disabled { color: var(--text-muted); background: rgba(160, 160, 184, 0.08); border-color: rgba(160, 160, 184, 0.2); pointer-events: none; }
+
+/* ===== إعدادات كلمة المرور ===== */
+.admin-password-box {
+  border: 1px solid rgba(108, 92, 231, 0.18);
+  border-radius: 14px;
+  padding: 20px;
+  background: rgba(108, 92, 231, 0.05);
+  margin-bottom: 24px;
+}
+.admin-password-box h3 { font-size: 1.05rem; margin-bottom: 6px; color: #a29bfe; }
+.admin-password-box form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.admin-password-box form .admin-field { margin-bottom: 0; }
+.admin-password-box form .admin-field.wide-email { grid-column: 1 / -1; }
+.admin-password-box .admin-email-input {
+  font-size: 1.05rem;
+  padding: 15px 18px;
+  letter-spacing: 0.3px;
+  background: rgba(108, 92, 231, 0.08);
+}
+.admin-password-box form .admin-btn { grid-column: 1 / -1; justify-content: center; }
+.admin-password-msg { grid-column: 1 / -1; font-size: 0.85rem; font-weight: 700; min-height: 20px; }
+.admin-password-msg.ok { color: #00cec9; }
+.admin-password-msg.error { color: #ff7675; }
+.admin-texts-head { margin: 0 0 18px; padding-bottom: 12px; border-bottom: 1px solid rgba(108, 92, 231, 0.12); }
+.admin-texts-head h3 { font-size: 1.05rem; color: #a29bfe; margin-bottom: 6px; }
+
+/* ===== شاشة الدخول ===== */
+.login-screen {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid rgba(108, 92, 231, 0.2);
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: var(--shadow);
+}
+.login-box .logo-icon {
+  margin: 0 auto 18px;
+  width: 56px; height: 56px;
+  background: var(--gradient-1);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 900; color: #fff;
+  transform: rotate(-5deg);
+  direction: ltr;
+}
+.login-box h2 { text-align: center; font-size: 1.5rem; margin-bottom: 8px; }
+.login-box > p { text-align: center; color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 24px; }
+.login-box .admin-btn { width: 100%; justify-content: center; margin-top: 16px; padding: 12px; }
+.login-error { color: #ff7675; font-size: 0.8rem; text-align: center; margin-top: 12px; min-height: 20px; }
+
+.admin-footer-note { text-align: center; color: var(--text-muted); font-size: 0.8rem; padding: 20px; }
+
+/* ===== الاستجابة ===== */
+@media (max-width: 1100px) {
+  .admin-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 18px;
+    padding: 20px 20px 48px;
+  }
+  .admin-main { padding: 22px; }
+}
+
+@media (max-width: 900px) {
+  body.admin-body { padding-top: 126px; }
+  .admin-header {
+    padding: 12px 16px;
+    height: auto;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .admin-header .nav-brand span { font-size: 0.95rem; }
+  .admin-actions {
+    width: 100%;
+    justify-content: stretch;
+    gap: 8px;
+  }
+  .admin-actions .admin-status { order: 10; margin-right: auto; }
+  .admin-actions .admin-btn { flex: 1 1 140px; justify-content: center; min-height: 44px; }
+  .admin-banner { margin: 12px 16px 0; font-size: 0.82rem; }
+
+  .admin-layout { grid-template-columns: 1fr; padding: 16px; gap: 16px; }
+  .admin-sidebar {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+  #adminTabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  #adminTabs .admin-tab { flex: 0 0 auto; }
+  .admin-tab {
+    width: auto;
+    white-space: nowrap;
+    padding: 11px 14px;
+    font-size: 0.88rem;
+    margin-bottom: 0;
+  }
+  #backupToggle { width: 100%; min-width: 0; justify-content: space-between; margin-top: 0; }
+  #backupToggle span { flex: 1; min-width: 0; white-space: normal; text-align: right; }
+  .admin-backup-panel { padding: 10px 0 4px; border-bottom: none; }
+  .admin-backup-panel .admin-btn { width: 100%; }
+
+  .admin-main { padding: 20px 16px; border-radius: 16px; min-height: 0; }
+  .admin-panel-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .admin-panel-head h2 { font-size: 1.25rem; }
+  .admin-item-body { grid-template-columns: 1fr; }
+  .admin-item-head { flex-wrap: wrap; }
+  .admin-password-box form { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  body.admin-body { padding-top: 172px; }
+  .admin-header { padding: 12px 14px; }
+  .admin-header .nav-brand { width: 100%; }
+  .admin-header .nav-brand .logo-icon { width: 36px; height: 36px; font-size: 1rem; border-radius: 10px; }
+  .admin-header .nav-brand span { font-size: 0.9rem; line-height: 1.4; }
+  .admin-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .admin-actions .admin-status {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+  .admin-actions .admin-btn {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+  .admin-banner { margin: 10px 14px 0; padding: 10px 14px; }
+
+  .admin-layout { padding: 14px; gap: 14px; }
+  .admin-main { padding: 18px 14px; }
+  .admin-field { margin-bottom: 18px; }
+  .admin-label { font-size: 0.85rem; }
+  .admin-input { font-size: 16px; padding: 12px 14px; }
+  textarea.admin-input { min-height: 96px; }
+
+  .admin-image-controls { flex-direction: column; align-items: stretch; }
+  .admin-image-controls .admin-input,
+  .admin-file-label,
+  .admin-image-controls .admin-btn { width: 100%; justify-content: center; }
+  .admin-image-preview { max-width: 100%; }
+
+  .admin-list-row { flex-wrap: wrap; }
+  .admin-list-row .admin-input { flex: 1 1 100%; }
+  .admin-list-row .admin-btn { margin-right: auto; }
+
+  .admin-item-card { padding: 14px; }
+  .admin-mini { grid-template-columns: 1fr; }
+  .admin-mini-thumb { height: 140px; }
+  .admin-mini-body { padding: 12px 14px 14px; }
+
+  .admin-password-box { padding: 16px 14px; }
+  .admin-password-box .admin-email-input { font-size: 16px; padding: 13px 14px; }
+  .login-screen { padding: 20px 14px; min-height: calc(100vh - 172px); }
+  .login-box { padding: 28px 20px; border-radius: 18px; }
+  .login-box h2 { font-size: 1.35rem; }
+  .admin-footer-note { padding: 16px 14px 24px; line-height: 1.8; }
+}
+
+@media (max-width: 380px) {
+  .admin-actions { grid-template-columns: 1fr; }
+  .admin-item-actions { width: 100%; justify-content: flex-end; }
+  .admin-panel-head h2 { font-size: 1.15rem; }
+}
