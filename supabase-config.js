@@ -12,4 +12,4 @@ window.SUPABASE_CONFIG = {
 };
 
 /* UID حساب المدير الوحيد المسموح له بالتعديل */
-window.ADMIN_UID = "a4298a30-af71-495d-8e84-ad7854b6b695";
+window.ADMIN_UID = "7ad1649c-f801-42b7-9bdf-b2f858f2dc20";
